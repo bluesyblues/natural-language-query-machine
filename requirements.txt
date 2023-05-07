@@ -1,0 +1,7 @@
+openai
+pyyaml
+pymysql
+fdb
+fastapi
+uvicorn
+jinja2

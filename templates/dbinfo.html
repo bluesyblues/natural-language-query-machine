@@ -1,0 +1,40 @@
+<div class="modal fade" id="dbInfo_{{db.db_id}}" tabindex="-1" aria-labelledby="dbInfoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="dbInfoLabel">DB information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">name</th>
+                            <td>{{db.name}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">type</th>
+                            <td>{{db.type}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">db id</th>
+                            <td>{{db.db_id}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">tables</th>
+                            <td>
+                                <div style="overflow:scroll; height:450px;">
+                                    {{db.tables}}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

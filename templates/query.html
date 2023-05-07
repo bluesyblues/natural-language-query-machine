@@ -1,0 +1,48 @@
+
+
+<script>
+    var sql = null
+    var request_id = null
+    function getDBId(event) {
+        var value = document.querySelector('input[name="selectDB"]:checked').value;
+        return value
+    }
+
+    function sendQuery(event) {
+        var inputValue = document.getElementById('inputValue').value;
+        var dbId = getDBId(event);
+        var data = JSON.stringify({
+            "db_id": dbId,
+            "query": inputValue
+        });
+
+        var config = {
+            method: 'post',
+            url: '/query',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+        
+        axios(config)
+            .then(function (response) {
+                sql = response.data.sql
+                request_id = response.data.request_id
+                console.log(sql)
+                document.getElementById("sql").innerHTML = sql;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+</script>
+
+<h2>Input query</h2>
+<div class="input-group" style="width: 750px">
+    <span class="input-group-text">query</span>
+    <textarea class="form-control" aria-label="query" id="inputValue"></textarea>
+</div>
+<button class="btn btn-primary" type="submit" onclick="sendQuery()">Send Query</button>
+
+

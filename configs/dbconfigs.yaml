@@ -1,0 +1,19 @@
+- name: music
+  type: SqliteDB
+  connection:
+    database: ./configs/music/chinook.db
+  tables:
+    table_schema_type: ddl
+    table_schema_path: ./configs/music/ddl
+
+- name: finance
+  type: FireBirdDB
+  connection:
+    host: 172.26.80.1
+    port: 3050
+    user: sysdba
+    password: masterkey
+    database: FIREBIRD_DB_FILE_PATH
+  tables:
+    table_schema_type: yaml
+    table_schema_path: ./configs/finance/tables.yaml

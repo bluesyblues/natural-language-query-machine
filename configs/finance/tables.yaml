@@ -1,0 +1,14 @@
+- name: FINANCE_IMPORT
+  info: donation import
+  columns:
+    FI_IN_DATE: donate date
+    FI_IMPORT_TYPE: donate type
+    FI_AMOUNT: donate amount
+    FI_DEBTOR_CM_SEQ: donate member id
+    FI_ACCOUNT: account id
+
+- name: MEMBER
+  info: member list
+  columns:
+    CM_NAME: member name
+    CM_SEQ: member id

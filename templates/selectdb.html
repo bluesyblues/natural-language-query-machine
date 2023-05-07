@@ -1,0 +1,19 @@
+
+        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+            <nav class="nav nav-pills flex-column">
+                <h2>Select DB</h2>
+                <nav class="nav nav-pills flex-column">
+                    {% for db in db_info %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selectDB" id="selectDB" value="{{db.db_id}}" onclick="getDBId(event)">
+                        <label class="form-check-label" for="selectDB" >
+                            {{db.name}}
+                        </label>
+                        <a class="link-opacity-100" data-bs-toggle="modal" data-bs-target="#dbInfo_{{db.db_id}}" id="info">info</a>
+                    </div>
+                    
+                    {% include 'dbinfo.html' %}
+                    {% endfor %}
+                </nav>
+            </nav>
+        </nav>

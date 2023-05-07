@@ -1,0 +1,24 @@
+<script>
+    function download(event) {
+        window.open('/query/' + request_id)
+    }
+</script>
+<h2>Result</h2>
+<div style = "width:800px">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">sql</th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="overflow:scroll; width: 750px; height:450px;">
+                        <span id="sql"></span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button type="button" class="btn btn-primary" onclick="download()">Download</button>
