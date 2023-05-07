@@ -48,7 +48,7 @@ Directly ask the requests to Natural Language Query Machine -> Query Machine mak
 
    You can set your own DB configuration with yaml files. This file is composed of four parts. 
    1. name : name of DB. should be unique
-   2. type : type of DB. Now we only have MariaDB, SqliteDB, FireBirdDB. You can add your DB in `db.py`
+   2. type : type of DB. Now we only have MariaDB, SqliteDB, FireBirdDB. You can add new type DB connector in `db.py`
    3. connection : connection information of DB. If you want to know what you need for this part, then check the init method of classes in `db.py` 
    4. tables : You should specify two parameters here. `table_schema_type` is for specifying how we provide table information to the ChatGPT, and you can choose either `ddl` or `yaml`. `table_schema_path` is the path of the file that specifies table schema. I will skip the detailed explanation. Please refer to the example file. `./configs/finance/tables.yaml`, `./configs/music/ddl`
 
