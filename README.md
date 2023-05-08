@@ -4,7 +4,7 @@ Natural Language Query Machine takes natural language queries as input, uses Cha
 
 Typically, data analysis teams spend a lot of effort processing data extraction requests from business teams, marketing teams, and others. By using Natural Language Query Machine, business and marketing teams can directly input natural language queries and receive the resulting extracted data themselves.
 
-However, please directly handle data extraction requests from executives. Do not use Natural Language Query Machine (They may misunderstand and think that you have nothing to do.)
+In cases where it is difficult to hire data analysts, such as in startups, it can be useful.
 
 -----------
 ## You can improve your data analysis process
