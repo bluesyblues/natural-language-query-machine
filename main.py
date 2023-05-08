@@ -9,7 +9,7 @@ import csv
 import os
 from query_machine.db import SqliteDB
 from datetime import datetime
-from helper_methods import make_dirs
+from query_machine.utils import make_dirs
 
 CONFIG_FILE_PATH = "./configs/dbconfigs.yaml"
 
