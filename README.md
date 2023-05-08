@@ -88,7 +88,23 @@ Directly ask the requests to Natural Language Query Machine -> Query Machine mak
    - If you want to use query machine core without API server, then check `example.py`.
    - If you want to read the documents for API, then check `127.0.0.1:8000/docs`.
 
-
+6. example natural language query
+   ```
+   query : daily revenue
+   
+   output sql : SELECT strftime('%Y-%m-%d', i.InvoiceDate) AS Date, SUM(ii.UnitPrice * ii.Quantity) AS Revenue FROM invoices i JOIN invoice_items ii ON i.InvoiceId = ii.InvoiceId GROUP BY Date ORDER BY Date DESC;
+   ```
+   
+   ```
+   query : top 10 customers
+   
+   output sql : SELECT c.FirstName, c.LastName, SUM(i.Total) as TotalSpent FROM customers c JOIN invoices i ON c.CustomerId = i.CustomerId GROUP BY c.CustomerId ORDER BY TotalSpent DESC LIMIT 10;
+   ```
+   
+   ```
+   query : Customers who spent the most money on a daily basis.
+   
+   output sql : SELECT c.CustomerId, c.FirstName || ' ' || c.LastName AS CustomerName, strftime('%Y-%m-%d', i.InvoiceDate) AS InvoiceDate, SUM(ii.UnitPrice * ii.Quantity) AS TotalSpent FROM customers c INNER JOIN invoices i ON c.CustomerId = i.CustomerId INNER JOIN invoice_items ii ON i.InvoiceId = ii.InvoiceId GROUP BY c.CustomerId, InvoiceDate ORDER BY TotalSpent DESC;
 ----------
 
 ## Important note
