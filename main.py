@@ -54,7 +54,7 @@ async def log(request_id, ip_address, query, sql, csv_path):
 
 
 async def write_csv_file(file_path, data):
-    with open(file_path, 'w') as csvfile:
+    with open(file_path, 'w', encoding='utf-8') as csvfile:
         csv_writer = csv.writer(csvfile, quotechar='"',
                                 quoting=csv.QUOTE_MINIMAL)
         csv_writer.writerows(data)
