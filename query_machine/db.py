@@ -36,7 +36,7 @@ class MariaDB(DB):
             user=user,
             password=password,
             database=database,
-            cursorclass=pymysql.cursors.DictCursor
+            charset='UTF-8'
         )
         return con
 
