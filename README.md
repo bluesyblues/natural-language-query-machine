@@ -95,3 +95,4 @@ Directly ask the requests to Natural Language Query Machine -> Query Machine mak
 - We do not take responsibility for the results obtained using this software.
 - This software was created as a hobby project, and although we will pay some attention to its maintenance, we will not invest a significant amount of effort into it.
 - Especially, the quality of webpage is very bad. We have no plans to improve it.
+- This software sends your query and your database table schema to ChatGPT.
