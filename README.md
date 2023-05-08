@@ -79,7 +79,7 @@ Directly ask the requests to Natural Language Query Machine -> Query Machine mak
 
    check your network configuration and run API server
    ```
-   uvicorn main:app --host=0.0.0.0 --port=8000
+   python -m uvicorn main:app --host=0.0.0.0 --port=8000
    ```
    If you have been following all processes well, then you can open the address `127.0.0.1:8000` in your web browser.
    Choose the DB you want ask, and input your question in natural language.
