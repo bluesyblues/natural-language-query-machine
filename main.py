@@ -9,7 +9,7 @@ import csv
 import os
 from query_machine.db import SqliteDB
 from datetime import datetime
-
+from query_machine.utils import make_dirs
 
 CONFIG_FILE_PATH = "./configs/dbconfigs.yaml"
 
@@ -79,11 +79,14 @@ async def get_db_info():
     return {db_id: db_dict[db_id].info() for db_id in db_dict}
 
 
+
+
 @app.post("/query")
 async def get_query_result(q: QueryForm, request: Request):
     result = db_dict[q.db_id].ask(q.query)
     request_id = str(uuid.uuid4())
     csv_path = f"./results/{request_id}.csv"
+    make_dirs("./results/")
     await write_csv_file(csv_path, result[1])
     await log(request_id, request.client.host, q.query, result[0], csv_path)
     return {"sql": result[0], "request_id": request_id}
